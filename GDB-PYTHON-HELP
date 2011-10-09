@@ -1,0 +1,1286 @@
+Help on package gdb:
+
+NAME
+    gdb
+
+FILE
+    (built-in)
+
+PACKAGE CONTENTS
+    FrameIterator
+    FrameWrapper
+    backtrace
+    command (package)
+    function (package)
+    printing
+    types
+
+CLASSES
+    __builtin__.object
+        Block
+        BlockIterator
+        Breakpoint
+        Command
+        Event
+            ExitedEvent
+            ThreadEvent
+                ContinueEvent
+                StopEvent
+                    BreakpointEvent
+                    SignalEvent
+        EventRegistry
+        Field
+        Frame
+        Function
+        Inferior
+        InferiorThread
+        Membuf
+        Objfile
+        Parameter
+        Progspace
+        Symbol
+        Symtab
+        Symtab_and_line
+        Type
+        Value
+    exceptions.Exception(exceptions.BaseException)
+        GdbError
+    exceptions.RuntimeError(exceptions.StandardError)
+        error
+            MemoryError
+    
+    class Block(__builtin__.object)
+     |  GDB block object
+     |  
+     |  Methods defined here:
+     |  
+     |  __iter__(...)
+     |      x.__iter__() <==> iter(x)
+     |  
+     |  is_valid(...)
+     |      is_valid () -> Boolean.
+     |      Return true if this block is valid, false if not.
+     |  
+     |  ----------------------------------------------------------------------
+     |  Data descriptors defined here:
+     |  
+     |  end
+     |      End address of the block.
+     |  
+     |  function
+     |      Symbol that names the block, or None.
+     |  
+     |  start
+     |      Start address of the block.
+     |  
+     |  superblock
+     |      Block containing the block, or None.
+     |  
+     |  ----------------------------------------------------------------------
+     |  Data and other attributes defined here:
+     |  
+     |  __new__ = <built-in method __new__ of type object at 0xaaf560>
+     |      T.__new__(S, ...) -> a new object with type S, a subtype of T
+    
+    class BlockIterator(__builtin__.object)
+     |  GDB block syms iterator object
+     |  
+     |  Methods defined here:
+     |  
+     |  __iter__(...)
+     |      x.__iter__() <==> iter(x)
+     |  
+     |  is_valid(...)
+     |      is_valid () -> Boolean.
+     |      Return true if this block iterator is valid, false if not.
+     |  
+     |  next(...)
+     |      x.next() -> the next value, or raise StopIteration
+     |  
+     |  ----------------------------------------------------------------------
+     |  Data and other attributes defined here:
+     |  
+     |  __new__ = <built-in method __new__ of type object at 0xaaf6e0>
+     |      T.__new__(S, ...) -> a new object with type S, a subtype of T
+    
+    class Breakpoint(__builtin__.object)
+     |  GDB breakpoint object
+     |  
+     |  Methods defined here:
+     |  
+     |  __delattr__(...)
+     |      x.__delattr__('name') <==> del x.name
+     |  
+     |  __init__(...)
+     |      x.__init__(...) initializes x; see x.__class__.__doc__ for signature     |  
+     |  __setattr__(...)
+     |      x.__setattr__('name', value) <==> x.name = value
+     |  
+     |  delete(...)
+     |      Delete the underlying GDB breakpoint.
+     |  
+     |  is_valid(...)
+     |      Return true if this breakpoint is valid, false if not.
+     |  
+     |  ----------------------------------------------------------------------
+     |  Data descriptors defined here:
+     |  
+     |  commands
+     |      Commands of the breakpoint, as specified by the user.
+     |  
+     |  condition
+     |      Condition of the breakpoint, as specified by the user,or None if no condition set.
+     |  
+     |  enabled
+     |      Boolean telling whether the breakpoint is enabled.
+     |  
+     |  expression
+     |      Expression of the breakpoint, as specified by the user.
+     |  
+     |  hit_count
+     |      Number of times the breakpoint has been hit.
+     |      Can be set to zero to clear the count. No other value is valid
+     |      when setting this property.
+     |  
+     |  ignore_count
+     |      Number of times this breakpoint should be automatically continued.
+     |  
+     |  location
+     |      Location of the breakpoint, as specified by the user.
+     |  
+     |  number
+     |      Breakpoint's number assigned by GDB.
+     |  
+     |  silent
+     |      Boolean telling whether the breakpoint is silent.
+     |  
+     |  task
+     |      Thread ID for the breakpoint.
+     |      If the value is a task ID (integer), then this is an Ada task-specific breakpoint.
+     |      If the value is None, then this breakpoint is not task-specific.
+     |      No other type of value can be used.
+     |  
+     |  thread
+     |      Thread ID for the breakpoint.
+     |      If the value is a thread ID (integer), then this is a thread-specific breakpoint.
+     |      If the value is None, then this breakpoint is not thread-specific.
+     |      No other type of value can be used.
+     |  
+     |  type
+     |      Type of breakpoint.
+     |  
+     |  visible
+     |      Whether the breakpoint is visible to the user.
+     |  
+     |  ----------------------------------------------------------------------
+     |  Data and other attributes defined here:
+     |  
+     |  __new__ = <built-in method __new__ of type object at 0xaafb40>
+     |      T.__new__(S, ...) -> a new object with type S, a subtype of T    
+    class BreakpointEvent(StopEvent)
+     |  GDB breakpoint stop event object
+     |  
+     |  Method resolution order:
+     |      BreakpointEvent
+     |      StopEvent
+     |      ThreadEvent
+     |      Event
+     |      __builtin__.object
+    
+    class Command(__builtin__.object)
+     |  GDB command object
+     |  
+     |  Methods defined here:
+     |  
+     |  __init__(...)
+     |      x.__init__(...) initializes x; see x.__class__.__doc__ for signature
+     |  
+     |  dont_repeat(...)
+     |      Prevent command repetition when user enters empty line.
+     |  
+     |  ----------------------------------------------------------------------
+     |  Data and other attributes defined here:
+     |  
+     |  __new__ = <built-in method __new__ of type object at 0xaaffa0>
+     |      T.__new__(S, ...) -> a new object with type S, a subtype of T
+    
+    class ContinueEvent(ThreadEvent)
+     |  GDB continue event object
+     |  
+     |  Method resolution order:
+     |      ContinueEvent
+     |      ThreadEvent
+     |      Event
+     |      __builtin__.object
+    
+    class Event(__builtin__.object)
+     |  GDB event object
+    
+    class EventRegistry(__builtin__.object)
+     |  GDB event registry object
+     |  
+     |  Methods defined here:
+     |  
+     |  connect(...)
+     |      Add function
+     |  
+     |  disconnect(...)
+     |      Remove function
+    
+    class ExitedEvent(Event)
+     |  GDB exited event object
+     |  
+     |  Method resolution order:
+     |      ExitedEvent
+     |      Event
+     |      __builtin__.object
+    
+    class Field(__builtin__.object)
+     |  GDB field object
+    
+    class Frame(__builtin__.object)
+     |  GDB frame object
+     |  
+     |  Methods defined here:
+     |  
+     |  __eq__(...)
+     |      x.__eq__(y) <==> x==y
+     |  
+     |  __ge__(...)
+     |      x.__ge__(y) <==> x>=y
+     |  
+     |  __gt__(...)
+     |      x.__gt__(y) <==> x>y
+     |  
+     |  __le__(...)
+     |      x.__le__(y) <==> x<=y
+     |  
+     |  __lt__(...)
+     |      x.__lt__(y) <==> x<y
+     |  
+     |  __ne__(...)
+     |      x.__ne__(y) <==> x!=y
+     |  
+     |  __str__(...)
+     |      x.__str__() <==> str(x)
+     |  
+     |  block(...)
+     |      block () -> gdb.Block.
+     |      Return the frame's code block.
+     |  
+     |  find_sal(...)
+     |      find_sal () -> gdb.Symtab_and_line.
+     |      Return the frame's symtab and line.
+     |  
+     |  function(...)
+     |      function () -> gdb.Symbol.
+     |      Returns the symbol for the function corresponding to this frame.
+     |  
+     |  is_valid(...)
+     |      is_valid () -> Boolean.
+     |      Return true if this frame is valid, false if not.
+     |  
+     |  name(...)
+     |      name () -> String.
+     |      Return the function name of the frame, or None if it can't be determined.
+     |  
+     |  newer(...)
+     |      newer () -> gdb.Frame.
+     |      Return the frame called by this frame.
+     |  
+     |  older(...)
+     |      older () -> gdb.Frame.
+     |      Return the frame that called this frame.
+     |  
+     |  pc(...)
+     |      pc () -> Long.
+     |      Return the frame's resume address.
+     |  
+     |  read_var(...)
+     |      read_var (variable) -> gdb.Value.
+     |      Return the value of the variable in this frame.
+     |  
+     |  select(...)
+     |      Select this frame as the user's current frame.
+     |  
+     |  type(...)
+     |      type () -> Integer.
+     |      Return the type of the frame.
+     |  
+     |  unwind_stop_reason(...)
+     |      unwind_stop_reason () -> Integer.
+     |      Return the reason why it's not possible to find frames older than this.
+     |  
+     |  ----------------------------------------------------------------------
+     |  Data and other attributes defined here:
+     |  
+     |  __new__ = <built-in method __new__ of type object at 0xab0800>
+     |      T.__new__(S, ...) -> a new object with type S, a subtype of T
+    
+    class Function(__builtin__.object)
+     |  GDB function object
+     |  
+     |  Methods defined here:
+     |  
+     |  __init__(...)
+     |      x.__init__(...) initializes x; see x.__class__.__doc__ for signature
+     |  
+     |  ----------------------------------------------------------------------
+     |  Data and other attributes defined here:
+     |  
+     |  __new__ = <built-in method __new__ of type object at 0xab0b20>
+     |      T.__new__(S, ...) -> a new object with type S, a subtype of T
+    
+    class GdbError(exceptions.Exception)
+     |  Method resolution order:
+     |      GdbError
+     |      exceptions.Exception
+     |      exceptions.BaseException
+     |      __builtin__.object
+     |  
+     |  Data descriptors defined here:
+     |  
+     |  __weakref__
+     |      list of weak references to the object (if defined)
+     |  
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from exceptions.Exception:
+     |  
+     |  __init__(...)
+     |      x.__init__(...) initializes x; see x.__class__.__doc__ for signature
+     |  
+     |  ----------------------------------------------------------------------
+     |  Data and other attributes inherited from exceptions.Exception:
+     |  
+     |  __new__ = <built-in method __new__ of type object at 0x7ff1b67eb580>
+     |      T.__new__(S, ...) -> a new object with type S, a subtype of T
+     |  
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from exceptions.BaseException:
+     |  
+     |  __delattr__(...)
+     |      x.__delattr__('name') <==> del x.name
+     |  
+     |  __getattribute__(...)
+     |      x.__getattribute__('name') <==> x.name
+     |  
+     |  __getitem__(...)
+     |      x.__getitem__(y) <==> x[y]
+     |  
+     |  __getslice__(...)
+     |      x.__getslice__(i, j) <==> x[i:j]
+     |      
+     |      Use of negative indices is not supported.
+     |  
+     |  __reduce__(...)
+     |  
+     |  __repr__(...)
+     |      x.__repr__() <==> repr(x)
+     |  
+     |  __setattr__(...)
+     |      x.__setattr__('name', value) <==> x.name = value
+     |  
+     |  __setstate__(...)
+     |  
+     |  __str__(...)
+     |      x.__str__() <==> str(x)
+     |  
+     |  ----------------------------------------------------------------------
+     |  Data descriptors inherited from exceptions.BaseException:
+     |  
+     |  __dict__
+     |  
+     |  args
+     |  
+     |  message
+     |      exception message
+    
+    class Inferior(__builtin__.object)
+     |  GDB inferior object
+     |  
+     |  Methods defined here:
+     |  
+     |  is_valid(...)
+     |      is_valid () -> Boolean.
+     |      Return true if this inferior is valid, false if not.
+     |  
+     |  read_memory(...)
+     |      read_memory (address, length) -> buffer
+     |      Return a buffer object for reading from the inferior's memory.
+     |  
+     |  search_memory(...)
+     |      search_memory (address, length, pattern) -> long
+     |      Return a long with the address of a match, or None.
+     |  
+     |  threads(...)
+     |      Return all the threads of this inferior.
+     |  
+     |  write_memory(...)
+     |      write_memory (address, buffer [, length])
+     |      Write the given buffer object to the inferior's memory.
+     |  
+     |  ----------------------------------------------------------------------
+     |  Data descriptors defined here:
+     |  
+     |  num
+     |      ID of inferior, as assigned by GDB.
+     |  
+     |  pid
+     |      PID of inferior, as assigned by the OS.
+     |  
+     |  was_attached
+     |      True if the inferior was created using 'attach'.
+    
+    class InferiorThread(__builtin__.object)
+     |  GDB thread object
+     |  
+     |  Methods defined here:
+     |  
+     |  is_exited(...)
+     |      is_exited () -> Boolean
+     |      Return whether the thread is exited.
+     |  
+     |  is_running(...)
+     |      is_running () -> Boolean
+     |      Return whether the thread is running.
+     |  
+     |  is_stopped(...)
+     |      is_stopped () -> Boolean
+     |      Return whether the thread is stopped.
+     |  
+     |  is_valid(...)
+     |      is_valid () -> Boolean.
+     |      Return true if this inferior thread is valid, false if not.
+     |  
+     |  switch(...)
+     |      switch ()
+     |      Makes this the GDB selected thread.
+     |  
+     |  ----------------------------------------------------------------------
+     |  Data descriptors defined here:
+     |  
+     |  name
+     |      The name of the thread, as set by the user or the OS.
+     |  
+     |  num
+     |      ID of the thread, as assigned by GDB.
+     |  
+     |  ptid
+     |      ID of the thread, as assigned by the OS.
+    
+    class Membuf(__builtin__.object)
+     |  GDB memory buffer object
+     |  
+     |  Methods defined here:
+     |  
+     |  __str__(...)
+     |      x.__str__() <==> str(x)
+     |  
+     |  ----------------------------------------------------------------------
+     |  Data and other attributes defined here:
+     |  
+     |  __new__ = <built-in method __new__ of type object at 0xab0e20>
+     |      T.__new__(S, ...) -> a new object with type S, a subtype of T
+    
+    class MemoryError(error)
+     |  Method resolution order:
+     |      MemoryError
+     |      error
+     |      exceptions.RuntimeError
+     |      exceptions.StandardError
+     |      exceptions.Exception
+     |      exceptions.BaseException
+     |      __builtin__.object
+     |  
+     |  Data descriptors inherited from error:
+     |  
+     |  __weakref__
+     |      list of weak references to the object (if defined)
+     |  
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from exceptions.RuntimeError:
+     |  
+     |  __init__(...)
+     |      x.__init__(...) initializes x; see x.__class__.__doc__ for signature
+     |  
+     |  ----------------------------------------------------------------------
+     |  Data and other attributes inherited from exceptions.RuntimeError:
+     |  
+     |  __new__ = <built-in method __new__ of type object at 0x7ff1b67ec780>
+     |      T.__new__(S, ...) -> a new object with type S, a subtype of T
+     |  
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from exceptions.BaseException:
+     |  
+     |  __delattr__(...)
+     |      x.__delattr__('name') <==> del x.name
+     |  
+     |  __getattribute__(...)
+     |      x.__getattribute__('name') <==> x.name
+     |  
+     |  __getitem__(...)
+     |      x.__getitem__(y) <==> x[y]
+     |  
+     |  __getslice__(...)
+     |      x.__getslice__(i, j) <==> x[i:j]
+     |      
+     |      Use of negative indices is not supported.
+     |  
+     |  __reduce__(...)
+     |  
+     |  __repr__(...)
+     |      x.__repr__() <==> repr(x)
+     |  
+     |  __setattr__(...)
+     |      x.__setattr__('name', value) <==> x.name = value
+     |  
+     |  __setstate__(...)
+     |  
+     |  __str__(...)
+     |      x.__str__() <==> str(x)
+     |  
+     |  ----------------------------------------------------------------------
+     |  Data descriptors inherited from exceptions.BaseException:
+     |  
+     |  __dict__
+     |  
+     |  args
+     |  
+     |  message
+     |      exception message
+    
+    class Objfile(__builtin__.object)
+     |  GDB objfile object
+     |  
+     |  Methods defined here:
+     |  
+     |  is_valid(...)
+     |      is_valid () -> Boolean.
+     |      Return true if this object file is valid, false if not.
+     |  
+     |  ----------------------------------------------------------------------
+     |  Data descriptors defined here:
+     |  
+     |  filename
+     |      The objfile's filename, or None.
+     |  
+     |  pretty_printers
+     |      Pretty printers.
+     |  
+     |  ----------------------------------------------------------------------
+     |  Data and other attributes defined here:
+     |  
+     |  __new__ = <built-in method __new__ of type object at 0xab1700>
+     |      T.__new__(S, ...) -> a new object with type S, a subtype of T
+    
+    class Parameter(__builtin__.object)
+     |  GDB parameter object
+     |  
+     |  Methods defined here:
+     |  
+     |  __delattr__(...)
+     |      x.__delattr__('name') <==> del x.name
+     |  
+     |  __getattribute__(...)
+     |      x.__getattribute__('name') <==> x.name
+     |  
+     |  __init__(...)
+     |      x.__init__(...) initializes x; see x.__class__.__doc__ for signature
+     |  
+     |  __setattr__(...)
+     |      x.__setattr__('name', value) <==> x.name = value
+     |  
+     |  ----------------------------------------------------------------------
+     |  Data and other attributes defined here:
+     |  
+     |  __new__ = <built-in method __new__ of type object at 0xab1a00>
+     |      T.__new__(S, ...) -> a new object with type S, a subtype of T
+    
+    class Progspace(__builtin__.object)
+     |  GDB progspace object
+     |  
+     |  Data descriptors defined here:
+     |  
+     |  filename
+     |      The progspace's main filename, or None.
+     |  
+     |  pretty_printers
+     |      Pretty printers.
+     |  
+     |  ----------------------------------------------------------------------
+     |  Data and other attributes defined here:
+     |  
+     |  __new__ = <built-in method __new__ of type object at 0xab1b80>
+     |      T.__new__(S, ...) -> a new object with type S, a subtype of T
+    
+    class SignalEvent(StopEvent)
+     |  GDB signal event object
+     |  
+     |  Method resolution order:
+     |      SignalEvent
+     |      StopEvent
+     |      ThreadEvent
+     |      Event
+     |      __builtin__.object
+    
+    class StopEvent(ThreadEvent)
+     |  GDB stop event object
+     |  
+     |  Method resolution order:
+     |      StopEvent
+     |      ThreadEvent
+     |      Event
+     |      __builtin__.object
+    
+    class Symbol(__builtin__.object)
+     |  GDB symbol object
+     |  
+     |  Methods defined here:
+     |  
+     |  __str__(...)
+     |      x.__str__() <==> str(x)
+     |  
+     |  is_valid(...)
+     |      is_valid () -> Boolean.
+     |      Return true if this symbol is valid, false if not.
+     |  
+     |  ----------------------------------------------------------------------
+     |  Data descriptors defined here:
+     |  
+     |  addr_class
+     |      Address class of the symbol.
+     |  
+     |  is_argument
+     |      True if the symbol is an argument of a function.
+     |  
+     |  is_constant
+     |      True if the symbol is a constant.
+     |  
+     |  is_function
+     |      True if the symbol is a function or method.
+     |  
+     |  is_variable
+     |      True if the symbol is a variable.
+     |  
+     |  linkage_name
+     |      Name of the symbol, as used by the linker (i.e., may be mangled).
+     |  
+     |  name
+     |      Name of the symbol, as it appears in the source code.
+     |  
+     |  print_name
+     |      Name of the symbol in a form suitable for output.
+     |      This is either name or linkage_name, depending on whether the user asked GDB
+     |      to display demangled or mangled names.
+     |  
+     |  symtab
+     |      Symbol table in which the symbol appears.
+    
+    class Symtab(__builtin__.object)
+     |  GDB symtab object
+     |  
+     |  Methods defined here:
+     |  
+     |  __str__(...)
+     |      x.__str__() <==> str(x)
+     |  
+     |  fullname(...)
+     |      fullname () -> String.
+     |      Return the symtab's full source filename.
+     |  
+     |  is_valid(...)
+     |      is_valid () -> Boolean.
+     |      Return true if this symbol table is valid, false if not.
+     |  
+     |  ----------------------------------------------------------------------
+     |  Data descriptors defined here:
+     |  
+     |  filename
+     |      The symbol table's source filename.
+     |  
+     |  objfile
+     |      The symtab's objfile.
+     |  
+     |  ----------------------------------------------------------------------
+     |  Data and other attributes defined here:
+     |  
+     |  __new__ = <built-in method __new__ of type object at 0xab2420>
+     |      T.__new__(S, ...) -> a new object with type S, a subtype of T
+    
+    class Symtab_and_line(__builtin__.object)
+     |  GDB symtab_and_line object
+     |  
+     |  Methods defined here:
+     |  
+     |  __str__(...)
+     |      x.__str__() <==> str(x)
+     |  
+     |  is_valid(...)
+     |      is_valid () -> Boolean.
+     |      Return true if this symbol table and line is valid, false if not.
+     |  
+     |  ----------------------------------------------------------------------
+     |  Data descriptors defined here:
+     |  
+     |  line
+     |      Return the symtab_and_line's line.
+     |  
+     |  pc
+     |      Return the symtab_and_line's pc.
+     |  
+     |  symtab
+     |      Symtab object.
+     |  
+     |  ----------------------------------------------------------------------
+     |  Data and other attributes defined here:
+     |  
+     |  __new__ = <built-in method __new__ of type object at 0xab25a0>
+     |      T.__new__(S, ...) -> a new object with type S, a subtype of T
+    
+    class ThreadEvent(Event)
+     |  GDB thread event object
+     |  
+     |  Method resolution order:
+     |      ThreadEvent
+     |      Event
+     |      __builtin__.object
+    
+    class Type(__builtin__.object)
+     |  GDB type object
+     |  
+     |  Methods defined here:
+     |  
+     |  __eq__(...)
+     |      x.__eq__(y) <==> x==y
+     |  
+     |  __ge__(...)
+     |      x.__ge__(y) <==> x>=y
+     |  
+     |  __gt__(...)
+     |      x.__gt__(y) <==> x>y
+     |  
+     |  __le__(...)
+     |      x.__le__(y) <==> x<=y
+     |  
+     |  __lt__(...)
+     |      x.__lt__(y) <==> x<y
+     |  
+     |  __ne__(...)
+     |      x.__ne__(y) <==> x!=y
+     |  
+     |  __str__(...)
+     |      x.__str__() <==> str(x)
+     |  
+     |  array(...)
+     |      array (N) -> Type
+     |      Return a type which represents an array of N objects of this type.
+     |  
+     |  const(...)
+     |      const () -> Type
+     |      Return a const variant of this type.
+     |  
+     |  fields(...)
+     |      field () -> list
+     |      Return a sequence holding all the fields of this type.
+     |      Each field is a dictionary.
+     |  
+     |  pointer(...)
+     |      pointer () -> Type
+     |      Return a type of pointer to this type.
+     |  
+     |  range(...)
+     |      range () -> tuple
+     |      Return a tuple containing the lower and upper range for this type.
+     |  
+     |  reference(...)
+     |      reference () -> Type
+     |      Return a type of reference to this type.
+     |  
+     |  strip_typedefs(...)
+     |      strip_typedefs () -> Type
+     |      Return a type formed by stripping this type of all typedefs.
+     |  
+     |  target(...)
+     |      target () -> Type
+     |      Return the target type of this type.
+     |  
+     |  template_argument(...)
+     |      template_argument (arg, [block]) -> Type
+     |      Return the type of a template argument.
+     |  
+     |  unqualified(...)
+     |      unqualified () -> Type
+     |      Return a variant of this type without const or volatile attributes.
+     |  
+     |  volatile(...)
+     |      volatile () -> Type
+     |      Return a volatile variant of this type
+     |  
+     |  ----------------------------------------------------------------------
+     |  Data descriptors defined here:
+     |  
+     |  code
+     |      The code for this type.
+     |  
+     |  sizeof
+     |      The size of this type, in bytes.
+     |  
+     |  tag
+     |      The tag name for this type, or None.
+    
+    class Value(__builtin__.object)
+     |  GDB value object
+     |  
+     |  Methods defined here:
+     |  
+     |  __abs__(...)
+     |      x.__abs__() <==> abs(x)
+     |  
+     |  __add__(...)
+     |      x.__add__(y) <==> x+y
+     |  
+     |  __and__(...)
+     |      x.__and__(y) <==> x&y
+     |  
+     |  __call__(...)
+     |      x.__call__(...) <==> x(...)
+     |  
+     |  __delitem__(...)
+     |      x.__delitem__(y) <==> del x[y]
+     |  
+     |  __div__(...)
+     |      x.__div__(y) <==> x/y
+     |  
+     |  __eq__(...)
+     |      x.__eq__(y) <==> x==y
+     |  
+     |  __float__(...)
+     |      x.__float__() <==> float(x)
+     |  
+     |  __ge__(...)
+     |      x.__ge__(y) <==> x>=y
+     |  
+     |  __getitem__(...)
+     |      x.__getitem__(y) <==> x[y]
+     |  
+     |  __gt__(...)
+     |      x.__gt__(y) <==> x>y
+     |  
+     |  __hash__(...)
+     |      x.__hash__() <==> hash(x)
+     |  
+     |  __int__(...)
+     |      x.__int__() <==> int(x)
+     |  
+     |  __invert__(...)
+     |      x.__invert__() <==> ~x
+     |  
+     |  __le__(...)
+     |      x.__le__(y) <==> x<=y
+     |  
+     |  __len__(...)
+     |      x.__len__() <==> len(x)
+     |  
+     |  __long__(...)
+     |      x.__long__() <==> long(x)
+     |  
+     |  __lshift__(...)
+     |      x.__lshift__(y) <==> x<<y
+     |  
+     |  __lt__(...)
+     |      x.__lt__(y) <==> x<y
+     |  
+     |  __mod__(...)
+     |      x.__mod__(y) <==> x%y
+     |  
+     |  __mul__(...)
+     |      x.__mul__(y) <==> x*y
+     |  
+     |  __ne__(...)
+     |      x.__ne__(y) <==> x!=y
+     |  
+     |  __neg__(...)
+     |      x.__neg__() <==> -x
+     |  
+     |  __nonzero__(...)
+     |      x.__nonzero__() <==> x != 0
+     |  
+     |  __or__(...)
+     |      x.__or__(y) <==> x|y
+     |  
+     |  __pos__(...)
+     |      x.__pos__() <==> +x
+     |  
+     |  __pow__(...)
+     |      x.__pow__(y[, z]) <==> pow(x, y[, z])
+     |  
+     |  __radd__(...)
+     |      x.__radd__(y) <==> y+x
+     |  
+     |  __rand__(...)
+     |      x.__rand__(y) <==> y&x
+     |  
+     |  __rdiv__(...)
+     |      x.__rdiv__(y) <==> y/x
+     |  
+     |  __rlshift__(...)
+     |      x.__rlshift__(y) <==> y<<x
+     |  
+     |  __rmod__(...)
+     |      x.__rmod__(y) <==> y%x
+     |  
+     |  __rmul__(...)
+     |      x.__rmul__(y) <==> y*x
+     |  
+     |  __ror__(...)
+     |      x.__ror__(y) <==> y|x
+     |  
+     |  __rpow__(...)
+     |      y.__rpow__(x[, z]) <==> pow(x, y[, z])
+     |  
+     |  __rrshift__(...)
+     |      x.__rrshift__(y) <==> y>>x
+     |  
+     |  __rshift__(...)
+     |      x.__rshift__(y) <==> x>>y
+     |  
+     |  __rsub__(...)
+     |      x.__rsub__(y) <==> y-x
+     |  
+     |  __rxor__(...)
+     |      x.__rxor__(y) <==> y^x
+     |  
+     |  __setitem__(...)
+     |      x.__setitem__(i, y) <==> x[i]=y
+     |  
+     |  __str__(...)
+     |      x.__str__() <==> str(x)
+     |  
+     |  __sub__(...)
+     |      x.__sub__(y) <==> x-y
+     |  
+     |  __xor__(...)
+     |      x.__xor__(y) <==> x^y
+     |  
+     |  cast(...)
+     |      Cast the value to the supplied type.
+     |  
+     |  dereference(...)
+     |      Dereferences the value.
+     |  
+     |  dynamic_cast(...)
+     |      dynamic_cast (gdb.Type) -> gdb.Value
+     |      Cast the value to the supplied type, as if by the C++ dynamic_cast operator.
+     |  
+     |  lazy_string(...)
+     |      lazy_string ([encoding]  [, length]) -> lazy_string
+     |      Return a lazy string representation of the value.
+     |  
+     |  reinterpret_cast(...)
+     |      reinterpret_cast (gdb.Type) -> gdb.Value
+     |      Cast the value to the supplied type, as if by the C++
+     |      reinterpret_cast operator.
+     |  
+     |  string(...)
+     |      string ([encoding] [, errors] [, length]) -> string
+     |      Return Unicode string representation of the value.
+     |  
+     |  ----------------------------------------------------------------------
+     |  Data descriptors defined here:
+     |  
+     |  address
+     |      The address of the value.
+     |  
+     |  dynamic_type
+     |      Dynamic type of the value.
+     |  
+     |  is_optimized_out
+     |      Boolean telling whether the value is optimized out (i.e., not available).
+     |  
+     |  type
+     |      Type of the value.
+     |  
+     |  ----------------------------------------------------------------------
+     |  Data and other attributes defined here:
+     |  
+     |  __new__ = <built-in method __new__ of type object at 0xab2fa0>
+     |      T.__new__(S, ...) -> a new object with type S, a subtype of T
+    
+    class error(exceptions.RuntimeError)
+     |  Method resolution order:
+     |      error
+     |      exceptions.RuntimeError
+     |      exceptions.StandardError
+     |      exceptions.Exception
+     |      exceptions.BaseException
+     |      __builtin__.object
+     |  
+     |  Data descriptors defined here:
+     |  
+     |  __weakref__
+     |      list of weak references to the object (if defined)
+     |  
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from exceptions.RuntimeError:
+     |  
+     |  __init__(...)
+     |      x.__init__(...) initializes x; see x.__class__.__doc__ for signature
+     |  
+     |  ----------------------------------------------------------------------
+     |  Data and other attributes inherited from exceptions.RuntimeError:
+     |  
+     |  __new__ = <built-in method __new__ of type object at 0x7ff1b67ec780>
+     |      T.__new__(S, ...) -> a new object with type S, a subtype of T
+     |  
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from exceptions.BaseException:
+     |  
+     |  __delattr__(...)
+     |      x.__delattr__('name') <==> del x.name
+     |  
+     |  __getattribute__(...)
+     |      x.__getattribute__('name') <==> x.name
+     |  
+     |  __getitem__(...)
+     |      x.__getitem__(y) <==> x[y]
+     |  
+     |  __getslice__(...)
+     |      x.__getslice__(i, j) <==> x[i:j]
+     |      
+     |      Use of negative indices is not supported.
+     |  
+     |  __reduce__(...)
+     |  
+     |  __repr__(...)
+     |      x.__repr__() <==> repr(x)
+     |  
+     |  __setattr__(...)
+     |      x.__setattr__('name', value) <==> x.name = value
+     |  
+     |  __setstate__(...)
+     |  
+     |  __str__(...)
+     |      x.__str__() <==> str(x)
+     |  
+     |  ----------------------------------------------------------------------
+     |  Data descriptors inherited from exceptions.BaseException:
+     |  
+     |  __dict__
+     |  
+     |  args
+     |  
+     |  message
+     |      exception message
+
+FUNCTIONS
+    block_for_pc(...)
+        Return the block containing the given pc value, or None.
+    
+    breakpoints(...)
+        Return a tuple of all breakpoint objects
+    
+    cli(...)
+        Enter the gdb CLI
+    
+    current_objfile(...)
+        Return the current Objfile being loaded, or None.
+    
+    current_progspace(...)
+        Return the current Progspace.
+    
+    decode_line(...)
+        decode_line (String) -> Tuple.  Decode a string argument the way
+        that 'break' or 'edit' does.  Return a tuple containing two elements.
+        The first element contains any unparsed portion of the String parameter
+        (or None if the string was fully parsed).  The second element contains
+        a tuple that contains all the locations that match, represented as
+        gdb.Symtab_and_line objects (or None).
+    
+    default_visualizer(...)
+        Find the default visualizer for a Value.
+    
+    execute(...)
+        Execute a gdb command
+    
+    flush(...)
+        Flush gdb's filtered stdout stream.
+    
+    frame_stop_reason_string(...)
+        stop_reason_string (Integer) -> String.
+        Return a string explaining unwind stop reason.
+    
+    history(...)
+        Get a value from history
+    
+    inferiors(...)
+        inferiors () -> (gdb.Inferior, ...).
+        Return a tuple containing all inferiors.
+    
+    lookup_global_symbol(...)
+        lookup_global_symbol (name [, domain]) -> symbol
+        Return the symbol corresponding to the given name (or None).
+    
+    lookup_symbol(...)
+        lookup_symbol (name [, block] [, domain]) -> (symbol, is_field_of_this)
+        Return a tuple with the symbol corresponding to the given name (or None) and
+        a boolean indicating if name is a field of the current implied argument
+        `this' (when the current language is object-oriented).
+    
+    lookup_type(...)
+        lookup_type (name [, block]) -> type
+        Return a Type corresponding to the given name.
+    
+    newest_frame(...)
+        newest_frame () -> gdb.Frame.
+        Return the newest frame object.
+    
+    objfiles(...)
+        Return a sequence of all loaded objfiles.
+    
+    parameter(...)
+        Return a gdb parameter's value
+    
+    parse_and_eval(...)
+        parse_and_eval (String) -> Value.
+        Parse String as an expression, evaluate it, and return the result as a Value.
+    
+    post_event(...)
+        Post an event into gdb's event loop.
+    
+    progspaces(...)
+        Return a sequence of all progspaces.
+    
+    selected_frame(...)
+        selected_frame () -> gdb.Frame.
+        Return the selected frame object.
+    
+    selected_thread(...)
+        selected_thread () -> gdb.InferiorThread.
+        Return the selected thread object.
+    
+    solib_name(...)
+        solib_name (Long) -> String.
+        Return the name of the shared library holding a given address, or None.
+    
+    string_to_argv(...)
+        string_to_argv (String) -> Array.
+        Parse String and return an argv-like array.
+        Arguments are separate by spaces and may be quoted.
+    
+    target_charset(...)
+        target_charset () -> string.
+        Return the name of the current target charset.
+    
+    target_wide_charset(...)
+        target_wide_charset () -> string.
+        Return the name of the current target wide charset.
+    
+    write(...)
+        Write a string using gdb's filtered stream.
+
+DATA
+    ARCH_FRAME = 4
+    BP_ACCESS_WATCHPOINT = 8
+    BP_BREAKPOINT = 1
+    BP_HARDWARE_WATCHPOINT = 6
+    BP_NONE = 0
+    BP_READ_WATCHPOINT = 7
+    BP_WATCHPOINT = 5
+    COMMAND_BREAKPOINTS = 6
+    COMMAND_DATA = 1
+    COMMAND_FILES = 3
+    COMMAND_MAINTENANCE = 11
+    COMMAND_NONE = -1
+    COMMAND_OBSCURE = 10
+    COMMAND_RUNNING = 0
+    COMMAND_STACK = 2
+    COMMAND_STATUS = 5
+    COMMAND_SUPPORT = 4
+    COMMAND_TRACEPOINTS = 7
+    COMPLETE_COMMAND = 3
+    COMPLETE_FILENAME = 1
+    COMPLETE_LOCATION = 2
+    COMPLETE_NONE = 0
+    COMPLETE_SYMBOL = 4
+    DUMMY_FRAME = 1
+    FRAME_UNWIND_FIRST_ERROR = 3
+    FRAME_UNWIND_INNER_ID = 5
+    FRAME_UNWIND_NO_REASON = 0
+    FRAME_UNWIND_NO_SAVED_PC = 7
+    FRAME_UNWIND_NULL_ID = 1
+    FRAME_UNWIND_SAME_ID = 6
+    HOST_CONFIG = 'x86_64-unknown-linux-gnu'
+    INLINE_FRAME = 2
+    NORMAL_FRAME = 0
+    PARAM_AUTO_BOOLEAN = 1
+    PARAM_BOOLEAN = 0
+    PARAM_ENUM = 10
+    PARAM_FILENAME = 7
+    PARAM_INTEGER = 3
+    PARAM_OPTIONAL_FILENAME = 6
+    PARAM_STRING = 4
+    PARAM_STRING_NOESCAPE = 5
+    PARAM_UINTEGER = 2
+    PARAM_ZINTEGER = 8
+    PYTHONDIR = '/usr/local/share/gdb/python'
+    SENTINEL_FRAME = 5
+    SIGTRAMP_FRAME = 3
+    STDERR = 1
+    STDLOG = 2
+    STDOUT = 0
+    SYMBOL_FUNCTIONS_DOMAIN = 1
+    SYMBOL_LABEL_DOMAIN = 3
+    SYMBOL_LOC_ARG = 4
+    SYMBOL_LOC_BLOCK = 10
+    SYMBOL_LOC_COMPUTED = 14
+    SYMBOL_LOC_CONST = 1
+    SYMBOL_LOC_CONST_BYTES = 11
+    SYMBOL_LOC_LABEL = 9
+    SYMBOL_LOC_LOCAL = 7
+    SYMBOL_LOC_OPTIMIZED_OUT = 13
+    SYMBOL_LOC_REF_ARG = 5
+    SYMBOL_LOC_REGISTER = 3
+    SYMBOL_LOC_REGPARM_ADDR = 6
+    SYMBOL_LOC_STATIC = 2
+    SYMBOL_LOC_TYPEDEF = 8
+    SYMBOL_LOC_UNDEF = 0
+    SYMBOL_LOC_UNRESOLVED = 12
+    SYMBOL_STRUCT_DOMAIN = 2
+    SYMBOL_TYPES_DOMAIN = 2
+    SYMBOL_UNDEF_DOMAIN = 0
+    SYMBOL_VARIABLES_DOMAIN = 0
+    SYMBOL_VAR_DOMAIN = 1
+    TARGET_CONFIG = 'x86_64-unknown-linux-gnu'
+    TYPE_CODE_ARRAY = 2
+    TYPE_CODE_BITSTRING = 14
+    TYPE_CODE_BOOL = 21
+    TYPE_CODE_CHAR = 20
+    TYPE_CODE_COMPLEX = 22
+    TYPE_CODE_DECFLOAT = 25
+    TYPE_CODE_ENUM = 5
+    TYPE_CODE_ERROR = 15
+    TYPE_CODE_FLAGS = 6
+    TYPE_CODE_FLT = 9
+    TYPE_CODE_FUNC = 7
+    TYPE_CODE_INT = 8
+    TYPE_CODE_INTERNAL_FUNCTION = 27
+    TYPE_CODE_MEMBERPTR = 18
+    TYPE_CODE_METHOD = 16
+    TYPE_CODE_METHODPTR = 17
+    TYPE_CODE_NAMESPACE = 24
+    TYPE_CODE_PTR = 1
+    TYPE_CODE_RANGE = 12
+    TYPE_CODE_REF = 19
+    TYPE_CODE_SET = 11
+    TYPE_CODE_STRING = 13
+    TYPE_CODE_STRUCT = 3
+    TYPE_CODE_TYPEDEF = 23
+    TYPE_CODE_UNION = 4
+    TYPE_CODE_VOID = 10
+    VERSION = '7.3.50.20110722-cvs'
+    WP_ACCESS = 2
+    WP_READ = 1
+    WP_WRITE = 0
+    pretty_printers = []
+
+

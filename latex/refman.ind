@@ -1,0 +1,78 @@
+\begin{theindex}
+
+  \item {assemble\_\discretionary {-}{}{}instructions}
+    \subitem {gdb\_\discretionary {-}{}{}utils}, \hyperpage{6}
+
+  \indexspace
+
+  \item {disassemble\_\discretionary {-}{}{}count}
+    \subitem {gdb\_\discretionary {-}{}{}utils}, \hyperpage{6}
+  \item {disassemble\_\discretionary {-}{}{}current\_\discretionary {-}{}{}instruction}
+    \subitem {gdb\_\discretionary {-}{}{}utils}, \hyperpage{6}
+  \item {disassemble\_\discretionary {-}{}{}current\_\discretionary {-}{}{}instructions}
+    \subitem {gdb\_\discretionary {-}{}{}utils}, \hyperpage{7}
+  \item {disassemble\_\discretionary {-}{}{}function}
+    \subitem {gdb\_\discretionary {-}{}{}utils}, \hyperpage{7}
+  \item {disassemble\_\discretionary {-}{}{}range}
+    \subitem {gdb\_\discretionary {-}{}{}utils}, \hyperpage{7}
+
+  \indexspace
+
+  \item {execute\_\discretionary {-}{}{}external}
+    \subitem {gdb\_\discretionary {-}{}{}utils}, \hyperpage{7}
+  \item {execute\_\discretionary {-}{}{}external\_\discretionary {-}{}{}output}
+    \subitem {gdb\_\discretionary {-}{}{}utils}, \hyperpage{8}
+  \item {execute\_\discretionary {-}{}{}output}
+    \subitem {gdb\_\discretionary {-}{}{}utils}, \hyperpage{8}
+
+  \indexspace
+
+  \item {gdb\_\discretionary {-}{}{}utils}, \hyperpage{5}
+    \subitem {assemble\_\discretionary {-}{}{}instructions}, 
+		\hyperpage{6}
+    \subitem {disassemble\_\discretionary {-}{}{}count}, \hyperpage{6}
+    \subitem {disassemble\_\discretionary {-}{}{}current\_\discretionary {-}{}{}instruction}, 
+		\hyperpage{6}
+    \subitem {disassemble\_\discretionary {-}{}{}current\_\discretionary {-}{}{}instructions}, 
+		\hyperpage{7}
+    \subitem {disassemble\_\discretionary {-}{}{}function}, 
+		\hyperpage{7}
+    \subitem {disassemble\_\discretionary {-}{}{}range}, \hyperpage{7}
+    \subitem {execute\_\discretionary {-}{}{}external}, \hyperpage{7}
+    \subitem {execute\_\discretionary {-}{}{}external\_\discretionary {-}{}{}output}, 
+		\hyperpage{8}
+    \subitem {execute\_\discretionary {-}{}{}output}, \hyperpage{8}
+    \subitem {normalized\_\discretionary {-}{}{}argv}, \hyperpage{8}
+    \subitem {parse\_\discretionary {-}{}{}disassembled\_\discretionary {-}{}{}output}, 
+		\hyperpage{8}
+    \subitem {process\_\discretionary {-}{}{}mappings}, \hyperpage{8}
+    \subitem {read\_\discretionary {-}{}{}string}, \hyperpage{9}
+    \subitem {search\_\discretionary {-}{}{}functions}, \hyperpage{9}
+    \subitem {search\_\discretionary {-}{}{}processes}, \hyperpage{9}
+  \item {gdb\_\discretionary {-}{}{}utils.py}, \hyperpage{11}
+
+  \indexspace
+
+  \item {normalized\_\discretionary {-}{}{}argv}
+    \subitem {gdb\_\discretionary {-}{}{}utils}, \hyperpage{8}
+
+  \indexspace
+
+  \item {parse\_\discretionary {-}{}{}disassembled\_\discretionary {-}{}{}output}
+    \subitem {gdb\_\discretionary {-}{}{}utils}, \hyperpage{8}
+  \item {process\_\discretionary {-}{}{}mappings}
+    \subitem {gdb\_\discretionary {-}{}{}utils}, \hyperpage{8}
+
+  \indexspace
+
+  \item {read\_\discretionary {-}{}{}string}
+    \subitem {gdb\_\discretionary {-}{}{}utils}, \hyperpage{9}
+
+  \indexspace
+
+  \item {search\_\discretionary {-}{}{}functions}
+    \subitem {gdb\_\discretionary {-}{}{}utils}, \hyperpage{9}
+  \item {search\_\discretionary {-}{}{}processes}
+    \subitem {gdb\_\discretionary {-}{}{}utils}, \hyperpage{9}
+
+\end{theindex}

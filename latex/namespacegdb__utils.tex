@@ -1,0 +1,335 @@
+\hypertarget{namespacegdb__utils}{
+\section{gdb\_\-utils Namespace Reference}
+\label{namespacegdb__utils}\index{gdb\_\-utils@{gdb\_\-utils}}
+}
+
+
+Various utility functions to work with GDB.  
+
+
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacegdb__utils_a45c469a5d115a84fc5be337a498d53e8}{read\_\-string}
+\begin{DoxyCompactList}\small\item\em Read an ASCII string from memory. \item\end{DoxyCompactList}\item 
+def \hyperlink{namespacegdb__utils_ac02efa9be19432d56d87e0e8449a01b8}{execute\_\-output}
+\begin{DoxyCompactList}\small\item\em Execute a GDB command with output capture. \item\end{DoxyCompactList}\item 
+def \hyperlink{namespacegdb__utils_a66a2a66bb422efdc0bb1e70d0c2b7bdb}{execute\_\-external}
+\begin{DoxyCompactList}\small\item\em Execute external command. \item\end{DoxyCompactList}\item 
+def \hyperlink{namespacegdb__utils_a7d52a77166676bd83335c267ad476ceb}{execute\_\-external\_\-output}
+\begin{DoxyCompactList}\small\item\em Execute external command with output capture. \item\end{DoxyCompactList}\item 
+def \hyperlink{namespacegdb__utils_a5fe1761fbd0a4c2b9f707c2dfad64575}{search\_\-functions}
+\begin{DoxyCompactList}\small\item\em Search program functions and return their names and addresses. \item\end{DoxyCompactList}\item 
+def \hyperlink{namespacegdb__utils_acd7370f13df479c88d906e889b689da5}{search\_\-processes}
+\begin{DoxyCompactList}\small\item\em Search running processes and return their info. \item\end{DoxyCompactList}\item 
+def \hyperlink{namespacegdb__utils_a26847c0237df4c93c1a9730fff176ebb}{parse\_\-disassembled\_\-output}
+\begin{DoxyCompactList}\small\item\em Parse disassebled output (internal function). \item\end{DoxyCompactList}\item 
+def \hyperlink{namespacegdb__utils_a53631beb2f9fbc513f91f518c8a14909}{disassemble\_\-function}
+\begin{DoxyCompactList}\small\item\em Disassemble a function. \item\end{DoxyCompactList}\item 
+def \hyperlink{namespacegdb__utils_afef6275f9b3c7c8ade8b5d480bb8cfa8}{disassemble\_\-range}
+\begin{DoxyCompactList}\small\item\em Disassemble a range. \item\end{DoxyCompactList}\item 
+def \hyperlink{namespacegdb__utils_ab1c43cdcaef7773455846cde28072195}{disassemble\_\-count}
+\begin{DoxyCompactList}\small\item\em Disassemble a variable number of instruction. \item\end{DoxyCompactList}\item 
+def \hyperlink{namespacegdb__utils_a582cf34912aa2a254db0f09439217952}{disassemble\_\-current\_\-instruction}
+\begin{DoxyCompactList}\small\item\em Disassemble and return the current instruction (pointed by the program counter register). \item\end{DoxyCompactList}\item 
+def \hyperlink{namespacegdb__utils_a06ba6fed35ce3e4c302ddda2538dfee2}{disassemble\_\-current\_\-instructions}
+\begin{DoxyCompactList}\small\item\em Disassemble a variable number of instruction starting from the current instruction (pointed by the program counter register). \item\end{DoxyCompactList}\item 
+def \hyperlink{namespacegdb__utils_a3f10b77a8290241190153a5f108a1350}{process\_\-mappings}
+\begin{DoxyCompactList}\small\item\em Get process memory mapping. \item\end{DoxyCompactList}\item 
+def \hyperlink{namespacegdb__utils_a54cbc3d1cad96ff0ce29a568d7e7f4b9}{assemble\_\-instructions}
+\begin{DoxyCompactList}\small\item\em Assemble x86/x64 assembly instructions and return a buffer containing the assembled machine code. \item\end{DoxyCompactList}\item 
+def \hyperlink{namespacegdb__utils_a8d529e9b58dc60b73aab4facf0f65481}{normalized\_\-argv}
+\begin{DoxyCompactList}\small\item\em Get the normalized system arguments to fix a little (IMHO) gdb bug: when the program is executed with no arguments sys.argv is equal to \mbox{[}''\mbox{]}, in this case the function returns \mbox{[}\mbox{]}, otherwise returns sys.argv immutated. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Various utility functions to work with GDB. This package provides functions not included in the default gdb module. 
+
+\subsection{Function Documentation}
+\hypertarget{namespacegdb__utils_a54cbc3d1cad96ff0ce29a568d7e7f4b9}{
+\index{gdb\_\-utils@{gdb\_\-utils}!assemble\_\-instructions@{assemble\_\-instructions}}
+\index{assemble\_\-instructions@{assemble\_\-instructions}!gdb_utils@{gdb\_\-utils}}
+\subsubsection[{assemble\_\-instructions}]{\setlength{\rightskip}{0pt plus 5cm}def gdb\_\-utils::assemble\_\-instructions (
+\begin{DoxyParamCaption}
+\item[{}]{ instructions}
+\end{DoxyParamCaption}
+)}}
+\label{namespacegdb__utils_a54cbc3d1cad96ff0ce29a568d7e7f4b9}
+
+
+Assemble x86/x64 assembly instructions and return a buffer containing the assembled machine code. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em instructions}](str) assembly instructions separated by a newline (basically an assembly listing)\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a buffer containing the assembled machine code 
+\end{DoxyReturn}
+\hypertarget{namespacegdb__utils_ab1c43cdcaef7773455846cde28072195}{
+\index{gdb\_\-utils@{gdb\_\-utils}!disassemble\_\-count@{disassemble\_\-count}}
+\index{disassemble\_\-count@{disassemble\_\-count}!gdb_utils@{gdb\_\-utils}}
+\subsubsection[{disassemble\_\-count}]{\setlength{\rightskip}{0pt plus 5cm}def gdb\_\-utils::disassemble\_\-count (
+\begin{DoxyParamCaption}
+\item[{}]{ start, }
+\item[{}]{ count, }
+\item[{}]{ regex = {\ttfamily ''}}
+\end{DoxyParamCaption}
+)}}
+\label{namespacegdb__utils_ab1c43cdcaef7773455846cde28072195}
+
+
+Disassemble a variable number of instruction. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em start}](int) start address \item[{\em count}](int) total number of instructions to disassemble \item[{\em regex}](str) optional regular expression applied to the instruction mnemonic\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+list of instructions represented by a dictionary address-\/$>$instr\_\-code 
+\end{DoxyReturn}
+\hypertarget{namespacegdb__utils_a582cf34912aa2a254db0f09439217952}{
+\index{gdb\_\-utils@{gdb\_\-utils}!disassemble\_\-current\_\-instruction@{disassemble\_\-current\_\-instruction}}
+\index{disassemble\_\-current\_\-instruction@{disassemble\_\-current\_\-instruction}!gdb_utils@{gdb\_\-utils}}
+\subsubsection[{disassemble\_\-current\_\-instruction}]{\setlength{\rightskip}{0pt plus 5cm}def gdb\_\-utils::disassemble\_\-current\_\-instruction (
+\begin{DoxyParamCaption}
+\item[{}]{ regex = {\ttfamily ''}}
+\end{DoxyParamCaption}
+)}}
+\label{namespacegdb__utils_a582cf34912aa2a254db0f09439217952}
+
+
+Disassemble and return the current instruction (pointed by the program counter register). 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em regex}](str) optional regular expression applied to the instruction mnemonic\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the current instruction represented by a dictionary address-\/$>$instr\_\-code 
+\end{DoxyReturn}
+\hypertarget{namespacegdb__utils_a06ba6fed35ce3e4c302ddda2538dfee2}{
+\index{gdb\_\-utils@{gdb\_\-utils}!disassemble\_\-current\_\-instructions@{disassemble\_\-current\_\-instructions}}
+\index{disassemble\_\-current\_\-instructions@{disassemble\_\-current\_\-instructions}!gdb_utils@{gdb\_\-utils}}
+\subsubsection[{disassemble\_\-current\_\-instructions}]{\setlength{\rightskip}{0pt plus 5cm}def gdb\_\-utils::disassemble\_\-current\_\-instructions (
+\begin{DoxyParamCaption}
+\item[{}]{ count, }
+\item[{}]{ regex = {\ttfamily ''}}
+\end{DoxyParamCaption}
+)}}
+\label{namespacegdb__utils_a06ba6fed35ce3e4c302ddda2538dfee2}
+
+
+Disassemble a variable number of instruction starting from the current instruction (pointed by the program counter register). 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em count}](int) total number of instructions to disassemble \item[{\em regex}](str) optional regular expression applied to the instruction mnemonic\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+list of instructions represented by a dictionary address-\/$>$instr\_\-code 
+\end{DoxyReturn}
+\hypertarget{namespacegdb__utils_a53631beb2f9fbc513f91f518c8a14909}{
+\index{gdb\_\-utils@{gdb\_\-utils}!disassemble\_\-function@{disassemble\_\-function}}
+\index{disassemble\_\-function@{disassemble\_\-function}!gdb_utils@{gdb\_\-utils}}
+\subsubsection[{disassemble\_\-function}]{\setlength{\rightskip}{0pt plus 5cm}def gdb\_\-utils::disassemble\_\-function (
+\begin{DoxyParamCaption}
+\item[{}]{ func\_\-name, }
+\item[{}]{ regex = {\ttfamily ''}}
+\end{DoxyParamCaption}
+)}}
+\label{namespacegdb__utils_a53631beb2f9fbc513f91f518c8a14909}
+
+
+Disassemble a function. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em function\_\-name}](str) name of the function to disassemble \item[{\em regex}](str) optional regular expression applied to the instruction mnemonic\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+list of instructions represented by a dictionary address-\/$>$instr\_\-code 
+\end{DoxyReturn}
+\hypertarget{namespacegdb__utils_afef6275f9b3c7c8ade8b5d480bb8cfa8}{
+\index{gdb\_\-utils@{gdb\_\-utils}!disassemble\_\-range@{disassemble\_\-range}}
+\index{disassemble\_\-range@{disassemble\_\-range}!gdb_utils@{gdb\_\-utils}}
+\subsubsection[{disassemble\_\-range}]{\setlength{\rightskip}{0pt plus 5cm}def gdb\_\-utils::disassemble\_\-range (
+\begin{DoxyParamCaption}
+\item[{}]{ start, }
+\item[{}]{ end, }
+\item[{}]{ regex = {\ttfamily ''}}
+\end{DoxyParamCaption}
+)}}
+\label{namespacegdb__utils_afef6275f9b3c7c8ade8b5d480bb8cfa8}
+
+
+Disassemble a range. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em start}](int) start address \item[{\em end}](int) end address \item[{\em regex}](str) optional regular expression applied to the instruction mnemonic\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+list of instructions represented by a dictionary address-\/$>$instr\_\-code 
+\end{DoxyReturn}
+\hypertarget{namespacegdb__utils_a66a2a66bb422efdc0bb1e70d0c2b7bdb}{
+\index{gdb\_\-utils@{gdb\_\-utils}!execute\_\-external@{execute\_\-external}}
+\index{execute\_\-external@{execute\_\-external}!gdb_utils@{gdb\_\-utils}}
+\subsubsection[{execute\_\-external}]{\setlength{\rightskip}{0pt plus 5cm}def gdb\_\-utils::execute\_\-external (
+\begin{DoxyParamCaption}
+\item[{}]{ command}
+\end{DoxyParamCaption}
+)}}
+\label{namespacegdb__utils_a66a2a66bb422efdc0bb1e70d0c2b7bdb}
+
+
+Execute external command. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em command}](str) command string to execute (command + arguments) \end{DoxyParams}
+\hypertarget{namespacegdb__utils_a7d52a77166676bd83335c267ad476ceb}{
+\index{gdb\_\-utils@{gdb\_\-utils}!execute\_\-external\_\-output@{execute\_\-external\_\-output}}
+\index{execute\_\-external\_\-output@{execute\_\-external\_\-output}!gdb_utils@{gdb\_\-utils}}
+\subsubsection[{execute\_\-external\_\-output}]{\setlength{\rightskip}{0pt plus 5cm}def gdb\_\-utils::execute\_\-external\_\-output (
+\begin{DoxyParamCaption}
+\item[{}]{ command}
+\end{DoxyParamCaption}
+)}}
+\label{namespacegdb__utils_a7d52a77166676bd83335c267ad476ceb}
+
+
+Execute external command with output capture. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em command}](str) command string to execute (command + arguments)\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+command output as list of strings 
+\end{DoxyReturn}
+\hypertarget{namespacegdb__utils_ac02efa9be19432d56d87e0e8449a01b8}{
+\index{gdb\_\-utils@{gdb\_\-utils}!execute\_\-output@{execute\_\-output}}
+\index{execute\_\-output@{execute\_\-output}!gdb_utils@{gdb\_\-utils}}
+\subsubsection[{execute\_\-output}]{\setlength{\rightskip}{0pt plus 5cm}def gdb\_\-utils::execute\_\-output (
+\begin{DoxyParamCaption}
+\item[{}]{ command}
+\end{DoxyParamCaption}
+)}}
+\label{namespacegdb__utils_ac02efa9be19432d56d87e0e8449a01b8}
+
+
+Execute a GDB command with output capture. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em command}](str) GDB command\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+command output (str) 
+\end{DoxyReturn}
+\hypertarget{namespacegdb__utils_a8d529e9b58dc60b73aab4facf0f65481}{
+\index{gdb\_\-utils@{gdb\_\-utils}!normalized\_\-argv@{normalized\_\-argv}}
+\index{normalized\_\-argv@{normalized\_\-argv}!gdb_utils@{gdb\_\-utils}}
+\subsubsection[{normalized\_\-argv}]{\setlength{\rightskip}{0pt plus 5cm}def gdb\_\-utils::normalized\_\-argv (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{namespacegdb__utils_a8d529e9b58dc60b73aab4facf0f65481}
+
+
+Get the normalized system arguments to fix a little (IMHO) gdb bug: when the program is executed with no arguments sys.argv is equal to \mbox{[}''\mbox{]}, in this case the function returns \mbox{[}\mbox{]}, otherwise returns sys.argv immutated. 
+
+\begin{DoxyReturn}{Returns}
+the normalized system arguments 
+\end{DoxyReturn}
+\hypertarget{namespacegdb__utils_a26847c0237df4c93c1a9730fff176ebb}{
+\index{gdb\_\-utils@{gdb\_\-utils}!parse\_\-disassembled\_\-output@{parse\_\-disassembled\_\-output}}
+\index{parse\_\-disassembled\_\-output@{parse\_\-disassembled\_\-output}!gdb_utils@{gdb\_\-utils}}
+\subsubsection[{parse\_\-disassembled\_\-output}]{\setlength{\rightskip}{0pt plus 5cm}def gdb\_\-utils::parse\_\-disassembled\_\-output (
+\begin{DoxyParamCaption}
+\item[{}]{ output, }
+\item[{}]{ regex = {\ttfamily ''}}
+\end{DoxyParamCaption}
+)}}
+\label{namespacegdb__utils_a26847c0237df4c93c1a9730fff176ebb}
+
+
+Parse disassebled output (internal function). 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em output}](list of strings) disassembled output \item[{\em regex}](str) optional regular expression applied to the instruction mnemonic\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+list of instructions represented by a dictionary address-\/$>$instr\_\-code 
+\end{DoxyReturn}
+\hypertarget{namespacegdb__utils_a3f10b77a8290241190153a5f108a1350}{
+\index{gdb\_\-utils@{gdb\_\-utils}!process\_\-mappings@{process\_\-mappings}}
+\index{process\_\-mappings@{process\_\-mappings}!gdb_utils@{gdb\_\-utils}}
+\subsubsection[{process\_\-mappings}]{\setlength{\rightskip}{0pt plus 5cm}def gdb\_\-utils::process\_\-mappings (
+\begin{DoxyParamCaption}
+\item[{}]{ regex = {\ttfamily ''}}
+\end{DoxyParamCaption}
+)}}
+\label{namespacegdb__utils_a3f10b77a8290241190153a5f108a1350}
+
+
+Get process memory mapping. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em regex}](str) optional regular expression applied name of the memory area\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a list of hash maps, where every hash map contains informations about a memory area 
+\end{DoxyReturn}
+\hypertarget{namespacegdb__utils_a45c469a5d115a84fc5be337a498d53e8}{
+\index{gdb\_\-utils@{gdb\_\-utils}!read\_\-string@{read\_\-string}}
+\index{read\_\-string@{read\_\-string}!gdb_utils@{gdb\_\-utils}}
+\subsubsection[{read\_\-string}]{\setlength{\rightskip}{0pt plus 5cm}def gdb\_\-utils::read\_\-string (
+\begin{DoxyParamCaption}
+\item[{}]{ address, }
+\item[{}]{ count}
+\end{DoxyParamCaption}
+)}}
+\label{namespacegdb__utils_a45c469a5d115a84fc5be337a498d53e8}
+
+
+Read an ASCII string from memory. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em address}](int) memory address of the string \item[{\em count}](int) maximum string lenght\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string read (str) 
+\end{DoxyReturn}
+\hypertarget{namespacegdb__utils_a5fe1761fbd0a4c2b9f707c2dfad64575}{
+\index{gdb\_\-utils@{gdb\_\-utils}!search\_\-functions@{search\_\-functions}}
+\index{search\_\-functions@{search\_\-functions}!gdb_utils@{gdb\_\-utils}}
+\subsubsection[{search\_\-functions}]{\setlength{\rightskip}{0pt plus 5cm}def gdb\_\-utils::search\_\-functions (
+\begin{DoxyParamCaption}
+\item[{}]{ regex = {\ttfamily ''}}
+\end{DoxyParamCaption}
+)}}
+\label{namespacegdb__utils_a5fe1761fbd0a4c2b9f707c2dfad64575}
+
+
+Search program functions and return their names and addresses. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em regex}](str) optional regular expression to search for specific functions\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+dictionary of the type func\_\-name-\/$>$address 
+\end{DoxyReturn}
+\hypertarget{namespacegdb__utils_acd7370f13df479c88d906e889b689da5}{
+\index{gdb\_\-utils@{gdb\_\-utils}!search\_\-processes@{search\_\-processes}}
+\index{search\_\-processes@{search\_\-processes}!gdb_utils@{gdb\_\-utils}}
+\subsubsection[{search\_\-processes}]{\setlength{\rightskip}{0pt plus 5cm}def gdb\_\-utils::search\_\-processes (
+\begin{DoxyParamCaption}
+\item[{}]{ regex = {\ttfamily ''}}
+\end{DoxyParamCaption}
+)}}
+\label{namespacegdb__utils_acd7370f13df479c88d906e889b689da5}
+
+
+Search running processes and return their info. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em regex}](str) optional regular expression applied to the process name\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a list of hash maps, where every hash map contains informations about a process 
+\end{DoxyReturn}

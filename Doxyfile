@@ -1,0 +1,5 @@
+INPUT          = gdb_utils.py
+IMAGE_PATH     = images
+EXTRACT_STATIC = YES
+EXTRACT_ALL    = YES
+
