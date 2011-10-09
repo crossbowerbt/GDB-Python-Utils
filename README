@@ -15,7 +15,7 @@ Some features already implemented:
 
 == But, hey, GDB and python?!? ==
 
-Yeah! Since version 7.0, can be scripted with python.
+Yeah! Since version 7.0, GDB can be scripted in python.
 
 Even if development is not finished yet, you can already do amazing things, as I will try to show you with the examples included in the library.
 
