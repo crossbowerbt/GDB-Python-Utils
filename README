@@ -1,0 +1,37 @@
+This README file is a condensed version of the project wiki:
+https://github.com/crossbowerbt/GDB-Python-Utils/wiki
+
+== Project description ==
+
+This project aims to create and maintain an utility library to provide useful functions to the standard GDB Python library, that is still under construction, and, for this reason, lacks very important features...
+
+The library is simple to use (just copy the standalone gdb_utils.py file in your project), but helps the creation of powerful python scripts that can exploit most of the GDB features.
+
+Some features already implemented:
+* Execute a GDB command and obtain its output 
+* Search functions and processes with or without regular expressions 
+* Disassemble memory regions and obtain a structured output
+* Assemble x86/x64 instructions and obtain the resulting payload
+
+== But, hey, GDB and python?!? ==
+
+Yeah! Since version 7.0, can be scripted with python.
+
+Even if development is not finished yet, you can already do amazing things, as I will try to show you with the examples included in the library.
+
+If you don't believe me, check these references:
+* the project page: http://sourceware.org/gdb/wiki/PythonGdb 
+* the excellent tutorials of Tom Tromey: http://tromey.com/blog/?cat=17 
+* GDB python documentation: http://sourceware.org/gdb/onlinedocs/gdb/Python.html 
+
+To install a Python-enabled GDB you can read the first tutorial of Tom Tromey: http://tromey.com/blog/?p=494. Maybe, in future, distributions will have a package for it...
+
+== Documentation ==
+
+Since it's difficult to get in the mind of the developer, this project adopts the rule "a function - an example".
+
+This means that for every function or class exposed by the library, there will be a nice snippet of code that explains how to use it: lovers of copy/paste will quickly feel at ease, although we recommend to understand what a piece of code does before using it...
+
+The "formal" documentation is created with Doxygen and available under html or latex directory in html or pdf formats.
+
+The "snippet" documentation is available at https://github.com/crossbowerbt/GDB-Python-Utils/wiki/Snippets/, in the project wiki.
