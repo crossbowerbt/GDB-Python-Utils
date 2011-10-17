@@ -235,7 +235,7 @@ def parse_disassembled_output(output, regex=''):
 ##
 # Disassemble a function
 #
-# @param function_name (str) name of the function to disassemble
+# @param func_name (str) name of the function to disassemble
 # @param regex (str) optional regular expression applied to the instruction mnemonic
 #
 # @return list of instructions represented by a dictionary address->instr_code
