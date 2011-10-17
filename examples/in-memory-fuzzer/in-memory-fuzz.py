@@ -27,6 +27,14 @@ def usage():
     gdb.execute('quit')
 
 #
+# Allocate memory on debugged process heap
+#
+def malloc(size):
+    output = gdb_utils.execute_output('call malloc(' + str(size) + ')')
+    # return memory address
+    return int(output[0].split(' ')[2])
+
+#
 # Generate strings for the fuzzer
 #
 # In this case we start with a short email and slowly increase its lenght...
@@ -86,9 +94,8 @@ while True:
     if len(fuzz_string) > 65000:
         break
 
-    # allocate the space for the fuzz string on the stack
-    stack_pointer = gdb.parse_and_eval('$sp')
-    fuzz_string_addr = stack_pointer - len(fuzz_string) - 1024
+    # allocate the space for the fuzz string on the heap
+    fuzz_string_addr = malloc( len(fuzz_string) + 10 )
 
     # set the register that holds the first argument (amd64 arch) to the address of fuzz_string
     gdb.execute('set $rdi=' + str(fuzz_string_addr))

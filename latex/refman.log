@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2010.12.11)  9 OCT 2011 12:22
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2010.12.11)  17 OCT 2011 08:08
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -771,14 +771,7 @@ Package hyperref Info: Option `pageanchor' set `false' on input line 36.
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <24.88> not available
 (Font)              Font shape `T1/ptm/b/n' tried instead on input line 49.
 
-(./refman.toc
-LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 1.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 2.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 2.
-)
+(./refman.toc)
 \tf@toc=\write5
 \openout5 = `refman.toc'.
 
@@ -788,68 +781,21 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 
 ]
 Package hyperref Info: Option `pageanchor' set `true' on input line 52.
-
-Chapter 1.
-LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <20.74> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 53.
-(./namespaces.tex
-LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <14.4> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 1.
-) [1
-
-]
-LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <7> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 55.
- [2
-
-]
-Chapter 2.
-(./files.tex) [3] [4
-
-]
-Chapter 3.
-(./namespacegdb__utils.tex
-LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 10.
-LaTeX Font Info:    Try loading font information for TS1+ptm on input line 13.
- (/usr/share/texmf-texlive/tex/latex/psnfss/ts1ptm.fd
-File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
-) [5]
-LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <10> not available
-(Font)              Font shape `T1/ptm/b/it' tried instead on input line 56.
-LaTeX Font Info:    Try loading font information for T1+pcr on input line 77.
- (/usr/share/texmf-texlive/tex/latex/psnfss/t1pcr.fd
-File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
-)
-LaTeX Font Info:    Font shape `T1/pcr/bx/it' in size <10> not available
-(Font)              Font shape `T1/pcr/b/it' tried instead on input line 77.
-LaTeX Font Info:    Font shape `T1/pcr/b/it' in size <10> not available
-(Font)              Font shape `T1/pcr/b/sl' tried instead on input line 77.
- [6] [7] [8])
-[9] [10
-
-]
-Chapter 4.
-(./gdb__utils_8py.tex [11]) (./refman.ind [12] [13
-
-]) (./refman.aux) ) 
+ (./refman.ind) (./refman.aux) ) 
 Here is how much of TeX's memory you used:
- 8356 strings out of 495061
- 115691 string characters out of 1182620
- 208794 words of memory out of 3000000
- 11313 multiletter control sequences out of 15000+50000
- 42073 words of font info for 44 fonts, out of 3000000 for 9000
+ 8158 strings out of 495061
+ 111725 string characters out of 1182620
+ 197796 words of memory out of 3000000
+ 11202 multiletter control sequences out of 15000+50000
+ 18660 words of font info for 25 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
- 38i,12n,58p,397b,492s stack positions out of 5000i,500n,10000p,200000b,50000s
-{/usr/share/texmf-texlive/fonts/enc/dvips/base/8r.enc}</usr/
-share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf
--texlive/fonts/type1/urw/courier/ucrbo8a.pfb></usr/share/texmf-texlive/fonts/ty
-pe1/urw/times/utmb8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/times/utmbi8
-a.pfb></usr/share/texmf-texlive/fonts/type1/urw/times/utmr8a.pfb></usr/share/te
-xmf-texlive/fonts/type1/urw/times/utmri8a.pfb>
-Output written on refman.pdf (17 pages, 118910 bytes).
+ 38i,11n,58p,270b,325s stack positions out of 5000i,500n,10000p,200000b,50000s
+{/usr/share/texmf-texlive/fonts/enc/dvips/base/
+8r.enc}</usr/share/texmf-texlive/fonts/type1/urw/times/utmb8a.pfb></usr/share/t
+exmf-texlive/fonts/type1/urw/times/utmr8a.pfb>
+Output written on refman.pdf (4 pages, 21424 bytes).
 PDF statistics:
- 325 PDF objects out of 1000 (max. 8388607)
- 60 named destinations out of 1000 (max. 500000)
- 201 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 29 PDF objects out of 1000 (max. 8388607)
+ 2 named destinations out of 1000 (max. 500000)
+ 1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
