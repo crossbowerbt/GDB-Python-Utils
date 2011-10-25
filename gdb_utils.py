@@ -15,7 +15,7 @@ import gdb
 # Read an ASCII string from memory
 #
 # @param address (int) memory address of the string
-# @param count (int) maximum string lenght
+# @param count (int) maximum string length
 #
 # @return string read (str)
 #

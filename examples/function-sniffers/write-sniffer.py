@@ -37,14 +37,14 @@ class WriteSnifferBreakpoint (gdb.Breakpoint):
     #
     def stop (self):
 
-        # get the string lenght, from the return value of the function
-        lenght = gdb.parse_and_eval('$rax')
+        # get the string length, from the return value of the function
+        length = gdb.parse_and_eval('$rax')
 
         # get the string address, from the second arguments of the function
         address = gdb.parse_and_eval('$rsi')
 
         # get the string
-        string = gdb.inferiors()[0].read_memory(address, lenght)
+        string = gdb.inferiors()[0].read_memory(address, length)
 
         # print sniffed data
         print string

@@ -37,7 +37,7 @@ def malloc(size):
 #
 # Generate strings for the fuzzer
 #
-# In this case we start with a short email and slowly increase its lenght...
+# In this case we start with a short email and slowly increase its length...
 #
 fuzz_email = ''
 def get_fuzz_email():
